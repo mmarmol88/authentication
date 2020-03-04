@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .serializers import UserSerializer, VendorSerializer, VendorSerializer, TransactionSerializer
-from .models import User, Vendor, Listing, Transaction
+from .serializers import VendorSerializer, ListingSerializer
+from .models import Vendor, Listing
 
 # Create your views here.
 

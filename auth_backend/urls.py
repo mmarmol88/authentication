@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from rest_framework.routers import DefaultRouter
 
@@ -10,4 +10,5 @@ urlpatterns = [
     # path('listings/<int:pk>/delete/', views.ItemDelete.as_view(), name = 'item_delete'),
     path('vendors/', views.VendorList.as_view(), name = 'vendor_list'),
     path('vendors/<int:pk>', views.VendorDetail.as_view(), name = 'vendor_detail'),
+    path('vendors/<int:pk>/listings/', views.ItemDetail.as_view(), name = 'item_create'),
 ]
