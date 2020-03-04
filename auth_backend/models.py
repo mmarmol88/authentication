@@ -3,26 +3,26 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     name = models.CharField(max_length=50)
-    email = model.CharField(max_length=250,unique=True)
-    password = models.CharField(max_length=40,min_length=8)
+    email = models.CharField(max_length=250,unique=True)
+    password = models.CharField(max_length=40)# min_length=8 in frontEnd
     street = models.CharField(max_length=200)
     city = models.CharField(max_length=50)
-    state = models.CharField(max_length=2, min_length=2)
-    zip_code = models.CharField(max_length=5, min_length=5)
-    phone_number = models.CharField(max_length=10, min_length=10)
+    state = models.CharField(max_length=2)
+    zip_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=10)
 
 
 
 class Vendor(models.Model):
     name = models.CharField(max_length=50)
-    type = models.CharField.
-    email = model.CharField(max_length=250,unique=True)
-    password = models.CharField(max_length=40,min_length=8)
+    type = models.CharField(max_length=20)
+    email = models.CharField(max_length=250,unique=True)
+    password = models.CharField(max_length=40) #min_length=8 in frontEnd
     street = models.CharField(max_length=200)
     city = models.CharField(max_length=50)
-    state = models.CharField(max_length=2, min_length=2)
-    zip_code = models.CharField(max_length=5, min_length=5)
-    phone_number = models.CharField(max_length=10, min_length=10)
+    state = models.CharField(max_length=2) #min_length=2
+    zip_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=10)
     description = models.TextField()
     closing_time = models.CharField(max_length=10)
     
