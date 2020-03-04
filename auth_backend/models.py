@@ -15,7 +15,7 @@ class User(models.Model):
 
 class Vendor(models.Model):
     name = models.CharField(max_length=50)
-    type = models.CharField(max_length=20)
+    vendor_type = models.CharField(max_length=20)
     email = models.CharField(max_length=250,unique=True)
     password = models.CharField(max_length=40) #min_length=8 in frontEnd
     street = models.CharField(max_length=200)
@@ -28,10 +28,22 @@ class Vendor(models.Model):
     
 
 class Listing(models.Model):
-    vendor_pk = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name='listings')
     name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     quantity = models.PositiveSmallIntegerField()
     description = models.TextField()
     vegan = models.BooleanField(default=False)
     vegetarian = models.BooleanField(default=False)
+    vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name='listings')
+
+class Transaction(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='transactions' )
+    total = models.DecimalField(max_digits=5, decimal_places=2)
+
+# this.state = {
+#      bag: {
+#          listings: [{ name, price, quantity }, {}],
+#          subtotal: num,
+#          total: subtotal + subtotal x tax
+#      }
+# }
