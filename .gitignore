@@ -1,0 +1,13 @@
+# Django #
+*.log
+*.pot
+*.pyc
+.vscode
+
+# Python # 
+*.py[cod] 
+*$py.class 
+
+settings.sql
+
+auth_django_backend
